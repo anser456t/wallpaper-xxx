@@ -27,45 +27,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Diagnose project.pbxproj integrity
+      - name: Validate project.pbxproj (fail fast with a clear error)
         run: |
           FILE="${{ env.PROJECT }}/project.pbxproj"
-          echo "== File size =="
-          wc -c "$FILE"
-          echo "== Line count =="
-          wc -l "$FILE"
-          echo "== SHA256 =="
-          shasum -a 256 "$FILE"
-          echo "== First 80 bytes (hex) =="
-          xxd -l 80 "$FILE"
-          echo "== First 3 lines =="
-          head -n 3 "$FILE"
-          echo "== Last 3 lines =="
-          tail -n 3 "$FILE"
-          echo "== file(1) type =="
-          file "$FILE"
-          echo "== git attr check =="
-          git check-attr -a "$FILE"
-          echo "== plutil -convert (real parse test, not just lint) =="
-          plutil -convert xml1 -o /tmp/converted.plist "$FILE" && echo "CONVERT SUCCEEDED" && wc -l /tmp/converted.plist || echo "CONVERT FAILED"
-          echo "== Ruby xcodeproj gem cross-check (industry-standard independent parser) =="
           gem list -i xcodeproj || gem install xcodeproj --no-document
           ruby -rxcodeproj -e "
             begin
               p = Xcodeproj::Project.open('${{ env.PROJECT }}')
-              puts 'RUBY XCODEPROJ: OPENED OK'
-              puts 'Targets: ' + p.targets.map(&:name).join(', ')
+              puts 'project.pbxproj OK — targets: ' + p.targets.map(&:name).join(', ')
             rescue => e
-              puts 'RUBY XCODEPROJ FAILED: ' + e.message
+              STDERR.puts '::error::project.pbxproj failed to parse: ' + e.message
+              exit 1
             end
           "
-          echo "== Minimal xcodebuild -list (no scheme) =="
-          xcodebuild -list -project "${{ env.PROJECT }}" || echo "xcodebuild -list also failed"
 
       - name: Select Xcode version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "15.4"
+          xcode-version: "16.1"
 
       - name: Show Xcode and Swift versions
         run: |
