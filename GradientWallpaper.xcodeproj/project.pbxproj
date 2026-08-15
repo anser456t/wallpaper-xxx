@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63CD3F1CF2C5DA26A44DA79D /* GradientWallpaperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D203215D67D21054218861E /* GradientWallpaperApp.swift */; };
+		48FDE5E6FE8CA7DB1EB733DE /* WallpaperEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA86295F93416DA0A4CED8 /* WallpaperEditorViewModel.swift */; };
+		94CCB181D884D1713722D20E /* EditorControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783226DC27ABA77D1F3F8605 /* EditorControls.swift */; };
+		633E179C6F73A7DBF7919D84 /* GradientStopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADEE49EBEBD19082216FA4F /* GradientStopBar.swift */; };
+		E54DE1C3B82BE5897DBB4508 /* GradientThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE06B053A31B82B1EFF5B9 /* GradientThumbnailView.swift */; };
+		115E511529B856B60BF5F126 /* HexRGBEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4334B72530427A24EE34E1 /* HexRGBEditor.swift */; };
+		1D39404B314B7D285EB36132 /* LayerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB803D7153C79930BEFED8 /* LayerStackView.swift */; };
+		5AC58EB1D29E910D8B644081 /* ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E770DECF948E44288C842 /* ImageEffects.swift */; };
+		5DB5FD006099717C02FBF5B1 /* PostProcessEffectRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BFE077F6F7AEB881D77D4 /* PostProcessEffectRenderer.swift */; };
+		37AD00AF8B1268C5A5FD6499 /* ShapeEffectRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A200CBDF38326DD65717E5 /* ShapeEffectRenderer.swift */; };
+		FA3CF2B572C189D76479C406 /* CanvasSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA3B59514EBE58B830139 /* CanvasSize.swift */; };
+		FC0186B30055FAD4E90D1E60 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88C494BF6406214AE97C82 /* ColorPalette.swift */; };
+		B85E705DC3324E976A3EEF76 /* EffectModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5EACC09EF236B94E85C18 /* EffectModels.swift */; };
+		F1BBD2830B9658469F9BF30B /* GradientModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982987EF41C2FF6A0B00989 /* GradientModels.swift */; };
+		937B1AA7C17038791A81E512 /* WallpaperProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01316F9C80AC2AFD4B631B5F /* WallpaperProject.swift */; };
+		2F3AE88F429850C3B24183C3 /* WallpaperPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1C0E240EB6B1D50EDB6DA /* WallpaperPreset.swift */; };
+		FD92CD978D3709A51F0DC18A /* GradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8539EC41210D66169A4ED /* GradientRenderer.swift */; };
+		74D0AD6468CA76135B9B4AA6 /* MeshRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63669603BE31D3DF83A041DA /* MeshRenderer.swift */; };
+		26C3764FDCE0B4E239E26405 /* WallpaperRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC30A29A082B929C92F2999 /* WallpaperRenderer.swift */; };
+		C473E27A1DD5A7DE9033CD51 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A195AD174993CBB81CBB8 /* ExportService.swift */; };
+		141EC5FEE6EFCE907B1D750D /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99BDAE8CFF325D1891A4FB /* HistoryManager.swift */; };
+		CB5D42A9571067E446B85912 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A2138B09EE3B1E821499 /* PersistenceService.swift */; };
+		164A7A53B039EC6CCB1EBBAF /* PhotoLibrarySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1FA24876ED6DF27D1FC77 /* PhotoLibrarySaver.swift */; };
+		A13665B91A18AE3468F4A501 /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFAD8D9B5630BD5A20AFBF /* CodableColor.swift */; };
+		9081F99130C0ECE4891C814B /* ColorsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF5BE4E02052A4FDC02697 /* ColorsPanelView.swift */; };
+		F16773F5214967BFE69D0E35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE5FCF652220287F3F3B431 /* ContentView.swift */; };
+		E9698240FFA3167D4EEB9AD2 /* CreatePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10283C0D9C6C466DD208C9 /* CreatePanelView.swift */; };
+		A939AD5953FEAEB03B9A0AD2 /* EffectEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA88BF955599BB123CAAAF /* EffectEditorView.swift */; };
+		4F3FFBF6D81627B5F3B8A9AC /* EffectsPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0995A60290FFDF6F7459B6 /* EffectsPaletteView.swift */; };
+		27D6C67D1A77F0F231C03D3A /* ExportSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A263EF12672866CA6D2B9 /* ExportSheetView.swift */; };
+		CCF804DAF407006108240AF9 /* GradientEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A17D3003A442999B5D85F /* GradientEditorView.swift */; };
+		9C42AF9D87B8B989FC62C325 /* PresetsGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE6D9E5B6FC2695BDC0586 /* PresetsGalleryView.swift */; };
+		C1A68D6562F4DDBE5A400006 /* PreviewCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D979B03B9F479A49F08796 /* PreviewCanvasView.swift */; };
+		5A60C1B1E3DC38D953D4BC3A /* SavedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E927413DAD60D996B6D1B /* SavedProjectsView.swift */; };
+		5DFD46A03268AC7AA3AFB458 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C585538428532F742E8C143D /* SettingsView.swift */; };
+		055588E6486F090905962D6E /* ShapesPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB247164D7228AB2281F40 /* ShapesPaletteView.swift */; };
+		D11C2A671845CCDA4544A3DD /* GradientWallpaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B36C99D9F6A80C64B859A /* GradientWallpaperTests.swift */; };
+		D0687455C07D878E9DB04308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E758D3DE80D79B5E7F0178 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A9C39C2051CFD4E17C52A04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD759D4193846E4910FD9BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 786E16E2A5FF21CC8F2CD5BF;
+			remoteInfo = GradientWallpaper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B7FA166B3D2D812B47B67F76 /* GradientWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B6794BAA67E78C54ED6939 /* GradientWallpaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientWallpaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D203215D67D21054218861E /* GradientWallpaperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientWallpaperApp.swift; sourceTree = "<group>"; };
+		D3CA86295F93416DA0A4CED8 /* WallpaperEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperEditorViewModel.swift; sourceTree = "<group>"; };
+		783226DC27ABA77D1F3F8605 /* EditorControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorControls.swift; sourceTree = "<group>"; };
+		BADEE49EBEBD19082216FA4F /* GradientStopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientStopBar.swift; sourceTree = "<group>"; };
+		EBEE06B053A31B82B1EFF5B9 /* GradientThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientThumbnailView.swift; sourceTree = "<group>"; };
+		7E4334B72530427A24EE34E1 /* HexRGBEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexRGBEditor.swift; sourceTree = "<group>"; };
+		DBCB803D7153C79930BEFED8 /* LayerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerStackView.swift; sourceTree = "<group>"; };
+		385E770DECF948E44288C842 /* ImageEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEffects.swift; sourceTree = "<group>"; };
+		188BFE077F6F7AEB881D77D4 /* PostProcessEffectRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessEffectRenderer.swift; sourceTree = "<group>"; };
+		A5A200CBDF38326DD65717E5 /* ShapeEffectRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeEffectRenderer.swift; sourceTree = "<group>"; };
+		13DAA3B59514EBE58B830139 /* CanvasSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasSize.swift; sourceTree = "<group>"; };
+		1E88C494BF6406214AE97C82 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		C0C5EACC09EF236B94E85C18 /* EffectModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectModels.swift; sourceTree = "<group>"; };
+		C982987EF41C2FF6A0B00989 /* GradientModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientModels.swift; sourceTree = "<group>"; };
+		01316F9C80AC2AFD4B631B5F /* WallpaperProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperProject.swift; sourceTree = "<group>"; };
+		63C1C0E240EB6B1D50EDB6DA /* WallpaperPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPreset.swift; sourceTree = "<group>"; };
+		FEA8539EC41210D66169A4ED /* GradientRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRenderer.swift; sourceTree = "<group>"; };
+		63669603BE31D3DF83A041DA /* MeshRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshRenderer.swift; sourceTree = "<group>"; };
+		2AC30A29A082B929C92F2999 /* WallpaperRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRenderer.swift; sourceTree = "<group>"; };
+		0A2A195AD174993CBB81CBB8 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		1D99BDAE8CFF325D1891A4FB /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
+		2D99A2138B09EE3B1E821499 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		90C1FA24876ED6DF27D1FC77 /* PhotoLibrarySaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrarySaver.swift; sourceTree = "<group>"; };
+		ECFFAD8D9B5630BD5A20AFBF /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
+		C2CF5BE4E02052A4FDC02697 /* ColorsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsPanelView.swift; sourceTree = "<group>"; };
+		5FE5FCF652220287F3F3B431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD10283C0D9C6C466DD208C9 /* CreatePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePanelView.swift; sourceTree = "<group>"; };
+		3CDA88BF955599BB123CAAAF /* EffectEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectEditorView.swift; sourceTree = "<group>"; };
+		FF0995A60290FFDF6F7459B6 /* EffectsPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsPaletteView.swift; sourceTree = "<group>"; };
+		C34A263EF12672866CA6D2B9 /* ExportSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSheetView.swift; sourceTree = "<group>"; };
+		9A7A17D3003A442999B5D85F /* GradientEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientEditorView.swift; sourceTree = "<group>"; };
+		0BAE6D9E5B6FC2695BDC0586 /* PresetsGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsGalleryView.swift; sourceTree = "<group>"; };
+		F5D979B03B9F479A49F08796 /* PreviewCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCanvasView.swift; sourceTree = "<group>"; };
+		B45E927413DAD60D996B6D1B /* SavedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProjectsView.swift; sourceTree = "<group>"; };
+		C585538428532F742E8C143D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3BDB247164D7228AB2281F40 /* ShapesPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesPaletteView.swift; sourceTree = "<group>"; };
+		572B36C99D9F6A80C64B859A /* GradientWallpaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientWallpaperTests.swift; sourceTree = "<group>"; };
+		F8E758D3DE80D79B5E7F0178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8331784C856BA480036C7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36E2D336F4D2831692B077F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5980A7394326B22AC661B135 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D3FC6DB5D0827F168A73277 = {
+			isa = PBXGroup;
+			children = (
+				36BCDBC0E3B980DECB314276 /* GradientWallpaper */,
+				ED4596A01DC028978AB2F21B /* Tests */,
+				068F80C7519D0528FB08E821 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		068F80C7519D0528FB08E821 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7FA166B3D2D812B47B67F76 /* GradientWallpaper.app */,
+				D5B6794BAA67E78C54ED6939 /* GradientWallpaperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36BCDBC0E3B980DECB314276 /* GradientWallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				FE910D29D648D8F2EA669AEF /* App */,
+				4724C3FAA6DC593B05F661BF /* Components */,
+				37D1275F0653F4E391D4F109 /* Effects */,
+				9CF43B31E8845D861542A38E /* Models */,
+				E7BAC1E016AAFEFC0CC774A3 /* Presets */,
+				9A2BC3227C890E2FE084077D /* Rendering */,
+				564EAF51B7DD4639ADD9B985 /* Services */,
+				94EC979C78A1C9E483FAC308 /* Utilities */,
+				C454586A1F4E28C340BDC1AD /* Views */,
+				F8E758D3DE80D79B5E7F0178 /* Assets.xcassets */,
+			);
+			path = GradientWallpaper;
+			sourceTree = "<group>";
+		};
+		FE910D29D648D8F2EA669AEF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D203215D67D21054218861E /* GradientWallpaperApp.swift */,
+				D3CA86295F93416DA0A4CED8 /* WallpaperEditorViewModel.swift */,
+				D8331784C856BA480036C7A5 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4724C3FAA6DC593B05F661BF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				783226DC27ABA77D1F3F8605 /* EditorControls.swift */,
+				BADEE49EBEBD19082216FA4F /* GradientStopBar.swift */,
+				EBEE06B053A31B82B1EFF5B9 /* GradientThumbnailView.swift */,
+				7E4334B72530427A24EE34E1 /* HexRGBEditor.swift */,
+				DBCB803D7153C79930BEFED8 /* LayerStackView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		37D1275F0653F4E391D4F109 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				385E770DECF948E44288C842 /* ImageEffects.swift */,
+				188BFE077F6F7AEB881D77D4 /* PostProcessEffectRenderer.swift */,
+				A5A200CBDF38326DD65717E5 /* ShapeEffectRenderer.swift */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		9CF43B31E8845D861542A38E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13DAA3B59514EBE58B830139 /* CanvasSize.swift */,
+				1E88C494BF6406214AE97C82 /* ColorPalette.swift */,
+				C0C5EACC09EF236B94E85C18 /* EffectModels.swift */,
+				C982987EF41C2FF6A0B00989 /* GradientModels.swift */,
+				01316F9C80AC2AFD4B631B5F /* WallpaperProject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7BAC1E016AAFEFC0CC774A3 /* Presets */ = {
+			isa = PBXGroup;
+			children = (
+				63C1C0E240EB6B1D50EDB6DA /* WallpaperPreset.swift */,
+			);
+			path = Presets;
+			sourceTree = "<group>";
+		};
+		9A2BC3227C890E2FE084077D /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				FEA8539EC41210D66169A4ED /* GradientRenderer.swift */,
+				63669603BE31D3DF83A041DA /* MeshRenderer.swift */,
+				2AC30A29A082B929C92F2999 /* WallpaperRenderer.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		564EAF51B7DD4639ADD9B985 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A2A195AD174993CBB81CBB8 /* ExportService.swift */,
+				1D99BDAE8CFF325D1891A4FB /* HistoryManager.swift */,
+				2D99A2138B09EE3B1E821499 /* PersistenceService.swift */,
+				90C1FA24876ED6DF27D1FC77 /* PhotoLibrarySaver.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		94EC979C78A1C9E483FAC308 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ECFFAD8D9B5630BD5A20AFBF /* CodableColor.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C454586A1F4E28C340BDC1AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2CF5BE4E02052A4FDC02697 /* ColorsPanelView.swift */,
+				5FE5FCF652220287F3F3B431 /* ContentView.swift */,
+				AD10283C0D9C6C466DD208C9 /* CreatePanelView.swift */,
+				3CDA88BF955599BB123CAAAF /* EffectEditorView.swift */,
+				FF0995A60290FFDF6F7459B6 /* EffectsPaletteView.swift */,
+				C34A263EF12672866CA6D2B9 /* ExportSheetView.swift */,
+				9A7A17D3003A442999B5D85F /* GradientEditorView.swift */,
+				0BAE6D9E5B6FC2695BDC0586 /* PresetsGalleryView.swift */,
+				F5D979B03B9F479A49F08796 /* PreviewCanvasView.swift */,
+				B45E927413DAD60D996B6D1B /* SavedProjectsView.swift */,
+				C585538428532F742E8C143D /* SettingsView.swift */,
+				3BDB247164D7228AB2281F40 /* ShapesPaletteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED4596A01DC028978AB2F21B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				572B36C99D9F6A80C64B859A /* GradientWallpaperTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		786E16E2A5FF21CC8F2CD5BF /* GradientWallpaper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5949664E770B1BFFCF9F30FA /* Build configuration list for PBXNativeTarget "GradientWallpaper" */;
+			buildPhases = (
+				DE6EE531638FBF802B9F50F8 /* Sources */,
+				36E2D336F4D2831692B077F8 /* Frameworks */,
+				505DCE76C480DFFAA8952713 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = GradientWallpaper;
+			productName = GradientWallpaper;
+			productReference = B7FA166B3D2D812B47B67F76 /* GradientWallpaper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E1690E98030429315D6F148 /* GradientWallpaperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD2278503B387135D5E8C12 /* Build configuration list for PBXNativeTarget "GradientWallpaperTests" */;
+			buildPhases = (
+				13B7451FC8A4D1526B49E800 /* Sources */,
+				5980A7394326B22AC661B135 /* Frameworks */,
+				3040473E96FEFD4AE67BEE15 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = (
+				272F841800B4D04C3070F12E /* PBXTargetDependency */,
+			);
+			name = GradientWallpaperTests;
+			productName = GradientWallpaperTests;
+			productReference = D5B6794BAA67E78C54ED6939 /* GradientWallpaperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CD759D4193846E4910FD9BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					786E16E2A5FF21CC8F2CD5BF = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					1E1690E98030429315D6F148 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 786E16E2A5FF21CC8F2CD5BF;
+					};
+				};
+			};
+			buildConfigurationList = 04381F66F2952792222CD8FA /* Build configuration list for PBXProject "GradientWallpaper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D3FC6DB5D0827F168A73277;
+			productRefGroup = 068F80C7519D0528FB08E821 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				786E16E2A5FF21CC8F2CD5BF /* GradientWallpaper */,
+				1E1690E98030429315D6F148 /* GradientWallpaperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		505DCE76C480DFFAA8952713 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0687455C07D878E9DB04308 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3040473E96FEFD4AE67BEE15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE6EE531638FBF802B9F50F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63CD3F1CF2C5DA26A44DA79D /* GradientWallpaperApp.swift in Sources */,
+				48FDE5E6FE8CA7DB1EB733DE /* WallpaperEditorViewModel.swift in Sources */,
+				94CCB181D884D1713722D20E /* EditorControls.swift in Sources */,
+				633E179C6F73A7DBF7919D84 /* GradientStopBar.swift in Sources */,
+				E54DE1C3B82BE5897DBB4508 /* GradientThumbnailView.swift in Sources */,
+				115E511529B856B60BF5F126 /* HexRGBEditor.swift in Sources */,
+				1D39404B314B7D285EB36132 /* LayerStackView.swift in Sources */,
+				5AC58EB1D29E910D8B644081 /* ImageEffects.swift in Sources */,
+				5DB5FD006099717C02FBF5B1 /* PostProcessEffectRenderer.swift in Sources */,
+				37AD00AF8B1268C5A5FD6499 /* ShapeEffectRenderer.swift in Sources */,
+				FA3CF2B572C189D76479C406 /* CanvasSize.swift in Sources */,
+				FC0186B30055FAD4E90D1E60 /* ColorPalette.swift in Sources */,
+				B85E705DC3324E976A3EEF76 /* EffectModels.swift in Sources */,
+				F1BBD2830B9658469F9BF30B /* GradientModels.swift in Sources */,
+				937B1AA7C17038791A81E512 /* WallpaperProject.swift in Sources */,
+				2F3AE88F429850C3B24183C3 /* WallpaperPreset.swift in Sources */,
+				FD92CD978D3709A51F0DC18A /* GradientRenderer.swift in Sources */,
+				74D0AD6468CA76135B9B4AA6 /* MeshRenderer.swift in Sources */,
+				26C3764FDCE0B4E239E26405 /* WallpaperRenderer.swift in Sources */,
+				C473E27A1DD5A7DE9033CD51 /* ExportService.swift in Sources */,
+				141EC5FEE6EFCE907B1D750D /* HistoryManager.swift in Sources */,
+				CB5D42A9571067E446B85912 /* PersistenceService.swift in Sources */,
+				164A7A53B039EC6CCB1EBBAF /* PhotoLibrarySaver.swift in Sources */,
+				A13665B91A18AE3468F4A501 /* CodableColor.swift in Sources */,
+				9081F99130C0ECE4891C814B /* ColorsPanelView.swift in Sources */,
+				F16773F5214967BFE69D0E35 /* ContentView.swift in Sources */,
+				E9698240FFA3167D4EEB9AD2 /* CreatePanelView.swift in Sources */,
+				A939AD5953FEAEB03B9A0AD2 /* EffectEditorView.swift in Sources */,
+				4F3FFBF6D81627B5F3B8A9AC /* EffectsPaletteView.swift in Sources */,
+				27D6C67D1A77F0F231C03D3A /* ExportSheetView.swift in Sources */,
+				CCF804DAF407006108240AF9 /* GradientEditorView.swift in Sources */,
+				9C42AF9D87B8B989FC62C325 /* PresetsGalleryView.swift in Sources */,
+				C1A68D6562F4DDBE5A400006 /* PreviewCanvasView.swift in Sources */,
+				5A60C1B1E3DC38D953D4BC3A /* SavedProjectsView.swift in Sources */,
+				5DFD46A03268AC7AA3AFB458 /* SettingsView.swift in Sources */,
+				055588E6486F090905962D6E /* ShapesPaletteView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B7451FC8A4D1526B49E800 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D11C2A671845CCDA4544A3DD /* GradientWallpaperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		272F841800B4D04C3070F12E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 786E16E2A5FF21CC8F2CD5BF /* GradientWallpaper */;
+			targetProxy = 3A9C39C2051CFD4E17C52A04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13A9DFF8F6856CAC9C210911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		46D3236E9F92A96F387A35D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		DE1CF4D3B8A3E6AB346AE786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GradientWallpaper/App/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gradientstudio.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E37F14AA5F7D856C9FA9F976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GradientWallpaper/App/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gradientstudio.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		E2817E870B68C17325B612EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gradientstudio.apptests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GradientWallpaper.app/GradientWallpaper";
+			};
+			name = Debug;
+		};
+		B62B88C78341119CC89DF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gradientstudio.apptests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GradientWallpaper.app/GradientWallpaper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04381F66F2952792222CD8FA /* Build configuration list for PBXProject "GradientWallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A9DFF8F6856CAC9C210911 /* Debug */,
+				46D3236E9F92A96F387A35D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5949664E770B1BFFCF9F30FA /* Build configuration list for PBXNativeTarget "GradientWallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1CF4D3B8A3E6AB346AE786 /* Debug */,
+				E37F14AA5F7D856C9FA9F976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AD2278503B387135D5E8C12 /* Build configuration list for PBXNativeTarget "GradientWallpaperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2817E870B68C17325B612EB /* Debug */,
+				B62B88C78341119CC89DF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CD759D4193846E4910FD9BB /* Project object */;
+}

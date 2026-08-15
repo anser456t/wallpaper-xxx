@@ -1,0 +1,113 @@
+name: Build Unsigned IPA
+
+# Builds the iPad app on a GitHub-hosted macOS runner and packages an
+# UNSIGNED .ipa, with no Apple Developer account, certificate, provisioning
+# profile, or App Store Connect key required. The .ipa is uploaded as a
+# workflow artifact for download and later local signing/sideloading.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-unsigned-ipa:
+    name: Build unsigned IPA
+    runs-on: macos-14
+    timeout-minutes: 30
+
+    env:
+      SCHEME: GradientWallpaper
+      PROJECT: GradientWallpaper.xcodeproj
+      CONFIGURATION: Release
+      ARCHIVE_PATH: build/GradientWallpaper.xcarchive
+      EXPORT_PATH: build/export
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.1"
+
+      - name: Show Xcode and Swift versions
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Resolve Swift package dependencies (if any)
+        run: |
+          if [ -f "${{ env.PROJECT }}/project.pbxproj" ]; then
+            xcodebuild -resolvePackageDependencies \
+              -project "${{ env.PROJECT }}" \
+              -scheme "${{ env.SCHEME }}" || echo "No Swift packages to resolve, continuing."
+          fi
+
+      - name: List available destinations (debug helper)
+        run: |
+          xcodebuild -project "${{ env.PROJECT }}" -scheme "${{ env.SCHEME }}" -showdestinations || true
+
+      - name: Build and archive (unsigned)
+        run: |
+          set -o pipefail
+          mkdir -p build
+          xcodebuild archive \
+            -project "${{ env.PROJECT }}" \
+            -scheme "${{ env.SCHEME }}" \
+            -configuration "${{ env.CONFIGURATION }}" \
+            -archivePath "${{ env.ARCHIVE_PATH }}" \
+            -destination "generic/platform=iOS" \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_ENTITLEMENTS="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES \
+            DEVELOPMENT_TEAM=""
+
+      - name: Verify the .app product exists
+        run: |
+          APP_PATH="${{ env.ARCHIVE_PATH }}/Products/Applications/GradientWallpaper.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "::error::Expected .app bundle not found at $APP_PATH"
+            find build -maxdepth 4
+            exit 1
+          fi
+          echo "Found app bundle at $APP_PATH"
+
+      # xcodebuild's normal -exportArchive step requires a provisioning
+      # profile / signing identity, which we deliberately don't have.
+      # Instead we build the unsigned .ipa manually: an .ipa is simply a
+      # zip archive containing a top-level "Payload" folder with the .app
+      # bundle inside it, per Apple's IPA format.
+      - name: Package unsigned IPA (Payload method)
+        run: |
+          set -e
+          APP_PATH="${{ env.ARCHIVE_PATH }}/Products/Applications/GradientWallpaper.app"
+          mkdir -p "${{ env.EXPORT_PATH }}/Payload"
+          cp -R "$APP_PATH" "${{ env.EXPORT_PATH }}/Payload/"
+
+          cd "${{ env.EXPORT_PATH }}"
+          zip -qr "GradientWallpaper-unsigned.ipa" "Payload"
+          cd -
+
+          echo "Unsigned IPA contents:"
+          unzip -l "${{ env.EXPORT_PATH }}/GradientWallpaper-unsigned.ipa" | head -30
+
+      - name: Upload unsigned IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GradientWallpaper-unsigned-ipa
+          path: ${{ env.EXPORT_PATH }}/GradientWallpaper-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload raw .app bundle (optional, for direct simulator/dev use)
+        uses: actions/upload-artifact@v4
+        with:
+          name: GradientWallpaper-app-bundle
+          path: ${{ env.ARCHIVE_PATH }}/Products/Applications/GradientWallpaper.app
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,2 +1,18 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Xcode project files are extremely sensitive to line-ending changes.
+# Marking them "binary" tells Git never to touch their line endings,
+# regardless of platform or a client's autocrlf setting — this prevents
+# Windows git clients (including GitHub Desktop) from silently rewriting
+# LF to CRLF (or vice versa) and corrupting the old-style plist format
+# that Xcode's project parser expects.
+
+*.pbxproj binary
+*.xcscheme binary
+*.xcworkspacedata binary
+*.xcsettings binary
+*.plist binary
+
+# Keep source and text files on consistent LF line endings.
+*.swift text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
