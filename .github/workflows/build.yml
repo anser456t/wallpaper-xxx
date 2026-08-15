@@ -46,11 +46,26 @@ jobs:
           file "$FILE"
           echo "== git attr check =="
           git check-attr -a "$FILE"
+          echo "== plutil -convert (real parse test, not just lint) =="
+          plutil -convert xml1 -o /tmp/converted.plist "$FILE" && echo "CONVERT SUCCEEDED" && wc -l /tmp/converted.plist || echo "CONVERT FAILED"
+          echo "== Ruby xcodeproj gem cross-check (industry-standard independent parser) =="
+          gem list -i xcodeproj || gem install xcodeproj --no-document
+          ruby -rxcodeproj -e "
+            begin
+              p = Xcodeproj::Project.open('${{ env.PROJECT }}')
+              puts 'RUBY XCODEPROJ: OPENED OK'
+              puts 'Targets: ' + p.targets.map(&:name).join(', ')
+            rescue => e
+              puts 'RUBY XCODEPROJ FAILED: ' + e.message
+            end
+          "
+          echo "== Minimal xcodebuild -list (no scheme) =="
+          xcodebuild -list -project "${{ env.PROJECT }}" || echo "xcodebuild -list also failed"
 
       - name: Select Xcode version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "16.2"
+          xcode-version: "15.4"
 
       - name: Show Xcode and Swift versions
         run: |
