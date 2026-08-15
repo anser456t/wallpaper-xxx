@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 /// The kind of visual layer that can be stacked on top of the base gradient.
 enum EffectKind: String, Codable, CaseIterable, Identifiable {
